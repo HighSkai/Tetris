@@ -78,7 +78,7 @@ int main()
     if (Keyboard::isKeyPressed(Keyboard::Down))
       delay = 0.05;
 
-    //// <- Move -> ///
+    // <-- Move --> //
     for (int i = 0; i < 4; i++)
     {
       b[i] = a[i];
@@ -88,10 +88,10 @@ int main()
       for (int i = 0; i < 4; i++)
         a[i] = b[i];
 
-    //////Rotate//////
+    // <-- Rotate --> //
     if (rotate)
     {
-      Point p = a[1]; // center of rotation
+      Point p = a[1]; // center
       for (int i = 0; i < 4; i++)
       {
         int x = a[i].y - p.y;
@@ -104,7 +104,7 @@ int main()
           a[i] = b[i];
     }
 
-    ///////Tick//////
+    // <-- Ticks --> //
     if (timer > delay)
     {
       for (int i = 0; i < 4; i++)
@@ -130,7 +130,7 @@ int main()
       timer = 0;
     }
 
-    ///////check lines//////////
+    // <-- Line Checks --> //
     int k = M - 1;
     for (int i = M - 1; i > 0; i--)
     {
@@ -149,7 +149,7 @@ int main()
     rotate = 0;
     delay = 0.3;
 
-    /////////draw//////////
+    // <-- Draw --> //
     window.clear(Color::White);
     window.draw(background);
 
